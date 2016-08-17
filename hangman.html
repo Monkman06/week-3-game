@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+ <title>Heat Wave Hangman</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <a><center><h1>Heat Wave Hangman</h1><center></a>
+      </div>
+    </nav>
+  <style type="text/css">
+    body { background: #5c8a8a !important;} 
+  </style>
+   <body>
+   <center>
+    <p><h3>Guess an item that makes heat waves tolerable</h3></p>
+    <p><h5>hints: burn prevention, breeze machine, visored headwear </h5></p>   <!--sunblock-->
+    <div id="game"></div>
+    <div>
+	    <press any letter to start playing/p>    
+</div>
+      <script type="text/javascript">
+
+var gameStart = prompt('Press any letter to start the game.');
+
+var words = [ "sunblock", "hat", "fan", ];
+ // Pick a random word
+ var word = words[Math.floor(Math.random() * words.length)];
+ // Set up the answer array
+ var answerArray = ["sunblock","hat","fan",];
+ for (var i = 0; i < word.length; i++) {
+ answerArray[i] = "_";
+ }
+ var remainingLetters = word.length;
+ // The game loop
+function myFunction() {
+    alert ("guess a letter.");
+}
+element.addEventListener("words", myFunction);
+ alert(answerArray.join(" "));
+ // Get a guess from the player
+ var guess = prompt("Guess a letter, or click Cancel to stop playing.");
+ if (guess === null) {
+ } else if (guess.length !== 1) {
+ alert("Please enter a single letter.");
+ } else {
+ // Update the game state with the guess
+ for (var j = 0; j < word.length; j++) {
+ if (word[j] === guess) {
+ answerArray[j] = guess;
+ remainingLetters--;
+ }
+ }
+ }
+ alert(answerArray.join(" "));
+ alert("Good job! The answer was " + word);
+ newGame();
+document.getElementById("button").onclick = guessLetter;
+ </script>
+</body>
+</html>
